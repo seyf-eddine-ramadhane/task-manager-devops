@@ -12,8 +12,8 @@ import {
 test("Add a new task", () => {
     const tasks = addTask([], "Learn Jenkins");
 
-    // assert.equal(tasks.length, 1);
-    assert.equal(tasks.length, 10);
+    assert.equal(tasks.length, 1);
+    // assert.equal(tasks.length, 10);
     assert.equal(tasks[0].title, "Learn Jenkins");
     assert.equal(tasks[0].completed, false);
 });
