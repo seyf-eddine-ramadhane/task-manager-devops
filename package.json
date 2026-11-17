@@ -1,0 +1,10 @@
+
+{
+  "name": "task-manager-devops",
+  "version": "1.0.0",
+  "description": "A simple task manager with Jenkins CI/CD",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
