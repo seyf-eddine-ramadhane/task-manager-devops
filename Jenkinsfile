@@ -21,10 +21,27 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Running automated tests...'
-                sh 'npm test'
+                echo 'Running automated tests and generating JUnit report...'
+
+                script {
+                    def testStatus = sh(
+                        script: 'npm run test:junit',
+                        returnStatus: true
+                    )
+
+                    junit(
+                        testResults: 'test-results.xml',
+                        allowEmptyResults: false
+                    )
+
+                    if (testStatus != 0) {
+                        error('Automated tests failed!')
+                    }
+                }
             }
         }
+    }
+}
 
         stage('Deploy') {
             steps {

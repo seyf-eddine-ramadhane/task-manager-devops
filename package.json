@@ -5,6 +5,7 @@
   "description": "A simple task manager with Jenkins CI/CD",
   "type": "module",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "test:junit": "node --test --test-reporter=junit --test-reporter-destination=test-results.xml"
   }
 }
